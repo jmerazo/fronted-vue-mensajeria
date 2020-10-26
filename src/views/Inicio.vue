@@ -22,6 +22,18 @@ export default {
   },
   mounted() {
     this.token = localStorage.getItem("token");
+
+    fetch("http://localhost:8000/api/empresa", {
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "RAGE " + localStorage.getItem("token")
+      },
+    })
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data)
+    })
+
   },
   methods: {
     salir() {

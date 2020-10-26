@@ -1,23 +1,23 @@
 <template>
-<div id="app">
-<Cabecera></Cabecera>
-<Footer></Footer>
+  <div id="app">
+    <Cabecera></Cabecera>
+    <Footer></Footer>
+  </div>
 
-</div>
-<router-view />
+  <router-view />
 </template>
-<script>
-import Cabecera from '@/components/Cabecera.vue'
-import Footer from '@/components/Footer.vue'
 
+
+<script>
+import Cabecera from "@/components/Cabecera.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
-  name: 'app',
-  components:{
+  name: "app",
+  components: {
     Cabecera,
-    Footer,   
-  }
-
-}
+    Footer,
+  },
+};
 </script>
 

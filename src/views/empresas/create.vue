@@ -39,7 +39,23 @@ export default {
     };
   },
   methods: {
-    guardar() {},
+    guardar() {
+        axios.post("http://localhost:8000/api/empresa", {
+            nombre: this.nombre,
+            razon_social: this.razon_social,
+            nit: this.nit,
+            direccion: this.direccion,
+            ciudad: this.ciudad,
+            departamento: this.departamento,
+            logo: this.logo
+        },{
+            headers: {
+                "Authorization": localStorage.getItem("token")
+            }
+        }).then(response => {
+            this.$router.push("/categorias")
+        }) 
+    },
   },
 };
 </script>

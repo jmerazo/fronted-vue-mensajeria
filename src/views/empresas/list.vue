@@ -36,16 +36,16 @@ export default {
   mounted() {
     axios.get("http://localhost:8000/api/empresa", {
         headers: {
-          "Authorization": localStorage.getItem("token")
+          "Authorization": "RAGE " + localStorage.getItem("token")
         },
     })
     .then(response => {
         console.log(response.data);
         this.empresas = response.data
     })
-    .catch(err =>{
+    /* .catch(err =>{
               this.error = true;
-    });
+    }); */
   },
 };
 </script>
