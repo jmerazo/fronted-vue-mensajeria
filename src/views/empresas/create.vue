@@ -30,13 +30,13 @@ export default {
   name: "CrearEmpresa",
   data() {
     return {
-      nombre: "",
-      razon_social: "",
-      nit: "",
-      direccion: "",
-      ciudad: "",
-      departamento: "",
-      logo: "",
+      nombre: '',
+      razon_social: '',
+      nit: '',
+      direccion_empresa: '',
+      ciudad: '',
+      departamento: '',
+      logo: '',
     };
   },
   methods: {
@@ -45,7 +45,7 @@ export default {
             nombre: this.nombre,
             razon_social: this.razon_social,
             nit: this.nit,
-            direccion: this.direccion,
+            direccion_empresa: this.direccion_empresa,
             ciudad: this.ciudad,
             departamento: this.departamento,
             logo: this.logo
@@ -54,7 +54,7 @@ export default {
                 "Authorization": localStorage.getItem("token")
             }
         }).then(response => {
-            this.$router.push("/categorias")
+            this.$router.push("/categorias");
         }) 
     },
   },
