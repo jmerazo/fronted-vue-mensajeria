@@ -57,4 +57,64 @@ export default {
 };
 </script>
 <style>
+h1{
+	text-align: center;
+	color: #1a2537;
+	font-size: 40px;
+}
+ .contenedor{
+	width: 100%;
+	padding: 10px;
+	border-radius: 20px;
+
+}
+input[type="text"],
+input[type="password"]
+{
+	font-size: 10px;
+	width: 65%;
+	padding: 3px;
+	border: none;
+  margin-right: 0.5rem;
+}
+.button_form{
+	border:none;
+	width: 60%;
+	height: 40px;
+	color: white;
+	font-size: 20px;
+	background:#1F4181;
+	padding: 3px 3px;
+	border-radius: 20px;	
+	cursor: pointer;
+	text-align: center;
+	margin-top: 0rem;
+	margin-left: 4.5rem;
+}
+.input-contenedor{
+	margin-bottom: 20px;
+	border:none;
+	border-radius: 20px;
+	height: 35px;
+	margin-right: 0rem;
+  margin-left: 2rem;
+
+}
+.formulario{
+	background: #E3E5EA;
+	padding: 12px;
+	border-radius: 20px;
+  
+
+}
+@media(min-width: 800px)
+{
+.formulario{
+	margin:auto;
+	width: 400px;
+	margin-top: 80px;
+	border-radius: 20px;
+	
+}
+}
 </style>
