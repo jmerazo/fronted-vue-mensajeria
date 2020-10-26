@@ -1,20 +1,22 @@
 <template>
-  <h1>Iniciar Sesión</h1>
-  <form @submit.prevent="login">
+  
+  <form @submit.prevent="login" class="formulario">
+    <h1>Iniciar Sesión</h1>
+    <div class="contenedor"></div>
     <div>
-      <label for="email">Email</label>
-      <input type="text" v-model="email" id="email" />
+      <label for="email" style="width:76px;">Email</label>
+      <input class="input-contenedor"  type="text" v-model="email" id="email" />
     </div>
     <div>
-      <label for="password">Contraseña</label>
-      <input type="password" v-model="password" id="password" />
+      <label for="password" style="width:76px;">Contraseña</label>
+      <input class="input-contenedor" type="password" v-model="password" id="password" />
     </div>
 
     <div style="color: red" v-if="error">
         Credenciales incorrectas
     </div>
 
-    <button type="submit">
+    <button type="submit" class="button_form">
         Iniciar Sesión
     </button>
   </form>
