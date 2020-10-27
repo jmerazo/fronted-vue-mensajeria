@@ -36,7 +36,7 @@ export default {
   mounted() {
     axios.get("http://localhost:8000/api/empresa", {
         headers: {
-          "Authorization": "RAGE " + localStorage.getItem("token")
+          "Authorization": "JWT " + localStorage.getItem("token")
         },
     })
     .then(response => {
