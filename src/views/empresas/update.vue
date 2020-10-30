@@ -5,7 +5,7 @@
   <form @submit.prevent="guardar" enctype="multipart/form-data">
     <div>
       <label for="nombre">Nombre</label>
-      <input type="text" v-model="empresa.nombre" id="nombre" /><br />
+      <input type="text" v-model="empresa.nombre" id="nombre"/><br />
       <label for="razon_social">Razon Social</label>
       <input
         type="text"
@@ -51,8 +51,8 @@ export default {
   data() {
     return {
       logoMiniatura: "",
+      id: null,
       empresa: {
-        id: null,
         nombre: "",
         razon_social: "",
         nit: "",
@@ -64,19 +64,21 @@ export default {
     };
   },
   mounted() {
-    this.id = this.$route.params.id;
-    axios.get("http://localhost:8000/api/empresa/" + this.id, {
+    this.id = this.$route.params.id
+    axios.get("http://localhost:8000/api/empresa/" + this.id, 
+    {
       headers: {
         Authorization: "JWT " + localStorage.getItem("token"),
       },
     }).then((response) =>{
-        this.empresa.nombre = response.data.empresa.nombre,
-        this.empresa.razon_social = response.data.empresa.razon_social,
-        this.empresa.nit = response.data.empresa.nit,
-        this.empresa.direccion_empresa = response.data.empresa.direccion_empresa,
-        this.empresa.ciudad_empresa = response.data.empresa.ciudad_empresa,
-        this.empresa.departamento_empresa = response.data.empresa.departamento_empresa,
-        this.empresa.logo = response.data.empresa.logo
+        console.log(response);
+        this.empresa.nombre = response.data.nombre,
+        this.empresa.razon_social = response.data.razon_social,
+        this.empresa.nit = response.data.nit,
+        this.empresa.direccion_empresa = response.data.direccion_empresa,
+        this.empresa.ciudad_empresa = response.data.ciudad_empresa,
+        this.empresa.departamento_empresa = response.data.departamento_empresa,
+        this.empresa.logo = response.data.logo
     });
   },
   methods: {
@@ -103,13 +105,13 @@ export default {
       data.append("logo", this.empresa.logo);
 
       axios
-        .put("http://localhost:8000/api/empresa/", data, {
+        .put("http://localhost:8000/api/empresa/" + this.id, data, {
           headers: {
             Authorization: "JWT " + localStorage.getItem("token"),
           },
         })
         .then((response) => {
-          this.$router.push("/empresas");
+          this.$router.push("/empresa");
         });
     },
   },

@@ -1,10 +1,10 @@
 <template>
   <h1 align="center">Empresas</h1>
-  <a href="/empresas/create">Agregar</a>
-  <a href="/">Inicio</a>
+  <a class="btn btn-success" href="/empresas/create">Agregar</a>
+  <a class="btn btn-warning" href="/">Inicio</a>
   <table class="table table-striped" id="table">
     <thead>
-      <tr class="bg-primary text-light">
+      <tr class="bg-dark text-light">
         <td>ID</td>
         <td>Nombre</td>
         <td>Razon Social</td>
