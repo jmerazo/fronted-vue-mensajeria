@@ -3,7 +3,6 @@ import { createRouter, createWebHistory } from 'vue-router';
 import EmpresasList from "@/views/empresas/list.vue";
 import EmpresaCrear from "@/views/empresas/create.vue";
 import EmpresaActualizar from "@/views/empresas/update.vue";
-import EmpresaEliminar from "@/views/empresas/delete.vue";
 
 const routes = [
   {
@@ -57,7 +56,7 @@ const routes = [
     component: () => import('../views/Login.vue')
   },
   {
-    path: '/empresas',
+    path: '/empresa',
     name: 'Empresas',
     component: EmpresasList,
     meta: {
@@ -65,7 +64,7 @@ const routes = [
     }
   },
   {
-    path: '/empresas/create',
+    path: '/empresa/create',
     name: 'CrearEmpresa',
     component: EmpresaCrear,
     meta: {
@@ -73,17 +72,9 @@ const routes = [
     }
   },
   {
-    path: '/empresas/update',
+    path: '/empresa/:id/update',
     name: 'ActualizarEmpresa',
     component: EmpresaActualizar,
-    meta: {
-      auth: true
-    }
-  },
-  {
-    path: '/empresas/eliminar',
-    name: 'EliminarEmpresa',
-    component: EmpresaEliminar,
     meta: {
       auth: true
     }

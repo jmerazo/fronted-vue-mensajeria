@@ -4,7 +4,7 @@
   <a href="/">Inicio</a>
   <table class="table table-striped" id="table">
     <thead>
-      <tr>
+      <tr class="bg-primary text-light">
         <td>ID</td>
         <td>Nombre</td>
         <td>Razon Social</td>
@@ -16,7 +16,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(empresa, index) in empresas" :key="empresa.id">
+      <tr v-for="empresa in empresas" :key="empresa.id">
         <td>{{ empresa.id }}</td>
         <td>{{ empresa.nombre }}</td>
         <td>{{ empresa.razon_social }}</td>
@@ -25,8 +25,17 @@
         <td>{{ empresa.ciudad_empresa }}</td>
         <td>{{ empresa.departamento_empresa }}</td>
         <div>
-          <button class="btn btn-success"><router-link to="/empresas/update"> ✏️ </router-link></button>
-          <button class="btn btn-danger" @click="eliminar_empresa(index, item)"> 🗑️ </button>
+          <a :href="`/empresa/${empresa.id}/update`" class="btn btn-success">
+             ✏️
+          </a>
+          <a
+            style="margin-left: 10px"
+            href="#"
+            class="btn btn-danger"
+            @click="eliminar_empresa(empresa.id)"
+          >
+            🗑️
+          </a>
         </div>
       </tr>
     </tbody>
@@ -44,7 +53,11 @@ export default {
     };
   },
   mounted() {
-    axios.get("http://localhost:8000/api/empresa", {
+    this.traerEmpresas();    
+  },
+  methods: {
+    traerEmpresas(){
+      axios.get("http://localhost:8000/api/empresa", {
         headers: {
           "Authorization": "JWT " + localStorage.getItem("token")
         },
@@ -56,34 +69,24 @@ export default {
     /* .catch(err =>{
               this.error = true;
     }); */
-  },
-  methods: {
-    eliminar_empresa(index, item) {
-      console.log(index);
-      console.log(item);
-      this.empresas.splice(index, 1);
-
-      let data = new FormData();
-      data.append("id", item.id);
-
-      axios
-        .delete("http://localhost:8000/api/empresa/", data, {
-          headers: {
-            Authorization: "JWT " + localStorage.getItem("token"),
-          },
-        })
-        .then((response) => {
-          this.$router.push("/empresas");
-        });
+    },
+    eliminar_empresa(id) {
+      axios.delete("http://localhost:8000/api/empresa/" + id, {
+        headers: {
+          "Authorization": "JWT " + localStorage.getItem("token")
+        },
+      })
+          .then(() => {
+            this.traerEmpresas();
+          });          
     }
   }
 };
 </script>
 
 <style>
-
 * {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-
 </style>

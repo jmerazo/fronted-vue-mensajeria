@@ -1,5 +1,5 @@
 <template>
-    <h1>Actualizar datos de Empresa</h1>
+  <h1>Actualizar datos de Empresa</h1>
   <a href="/empresas">Volver</a>
 
   <form @submit.prevent="guardar" enctype="multipart/form-data">
@@ -7,7 +7,11 @@
       <label for="nombre">Nombre</label>
       <input type="text" v-model="empresa.nombre" id="nombre" /><br />
       <label for="razon_social">Razon Social</label>
-      <input type="text" v-model="empresa.razon_social" id="razon_social" /><br />
+      <input
+        type="text"
+        v-model="empresa.razon_social"
+        id="razon_social"
+      /><br />
       <label for="nit">Nit</label>
       <input type="text" v-model="empresa.nit" id="nit" /><br />
       <label for="direccion_empresa">Dirección</label>
@@ -17,7 +21,11 @@
         id="direccion_empresa"
       /><br />
       <label for="ciudad">Ciudad</label>
-      <input type="text" v-model="empresa.ciudad_empresa" id="ciudad_empresa" /><br />
+      <input
+        type="text"
+        v-model="empresa.ciudad_empresa"
+        id="ciudad_empresa"
+      /><br />
       <label for="departamento">Departamento</label>
       <input
         type="text"
@@ -44,6 +52,7 @@ export default {
     return {
       logoMiniatura: "",
       empresa: {
+        id: null,
         nombre: "",
         razon_social: "",
         nit: "",
@@ -53,6 +62,22 @@ export default {
         logo: "",
       },
     };
+  },
+  mounted() {
+    this.id = this.$route.params.id;
+    axios.get("http://localhost:8000/api/empresa/" + this.id, {
+      headers: {
+        Authorization: "JWT " + localStorage.getItem("token"),
+      },
+    }).then((response) =>{
+        this.empresa.nombre = response.data.empresa.nombre,
+        this.empresa.razon_social = response.data.empresa.razon_social,
+        this.empresa.nit = response.data.empresa.nit,
+        this.empresa.direccion_empresa = response.data.empresa.direccion_empresa,
+        this.empresa.ciudad_empresa = response.data.empresa.ciudad_empresa,
+        this.empresa.departamento_empresa = response.data.empresa.departamento_empresa,
+        this.empresa.logo = response.data.empresa.logo
+    });
   },
   methods: {
     obtenerImagen(e) {
@@ -97,5 +122,4 @@ export default {
 </script>
 
 <style>
-
 </style>

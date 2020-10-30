@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Bienvenido</h1>
-    <a href="/empresas">Empresas</a>
+    <a href="/empresa">Empresas</a>
     <button type="button" @click="salir">Salir</button>
   </div>
 </template>
