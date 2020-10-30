@@ -2,6 +2,8 @@ import { reactive } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import EmpresasList from "@/views/empresas/list.vue";
 import EmpresaCrear from "@/views/empresas/create.vue";
+import EmpresaActualizar from "@/views/empresas/update.vue";
+import EmpresaEliminar from "@/views/empresas/delete.vue";
 
 const routes = [
   {
@@ -66,6 +68,22 @@ const routes = [
     path: '/empresas/create',
     name: 'CrearEmpresa',
     component: EmpresaCrear,
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/empresas/update',
+    name: 'ActualizarEmpresa',
+    component: EmpresaActualizar,
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/empresas/eliminar',
+    name: 'EliminarEmpresa',
+    component: EmpresaEliminar,
     meta: {
       auth: true
     }

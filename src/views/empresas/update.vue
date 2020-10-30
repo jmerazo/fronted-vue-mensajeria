@@ -1,5 +1,5 @@
 <template>
-  <h1>Crear empresa</h1>
+    <h1>Actualizar datos de Empresa</h1>
   <a href="/empresas">Volver</a>
 
   <form @submit.prevent="guardar" enctype="multipart/form-data">
@@ -78,7 +78,7 @@ export default {
       data.append("logo", this.empresa.logo);
 
       axios
-        .post("http://localhost:8000/api/empresa/", data, {
+        .put("http://localhost:8000/api/empresa/", data, {
           headers: {
             Authorization: "JWT " + localStorage.getItem("token"),
           },
@@ -95,3 +95,7 @@ export default {
   },
 };
 </script>
+
+<style>
+
+</style>

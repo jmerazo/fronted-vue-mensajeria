@@ -1,6 +1,6 @@
 <template>
     <div class="footer_ingreso">
-		Derechos reservados 2020	
+		©Derechos reservados 2020	
 	</div>
 </template>
 

@@ -2,8 +2,6 @@
   <div>
     <h1>Bienvenido</h1>
     <a href="/empresas">Empresas</a>
-    {{ token }}
-
     <button type="button" @click="salir">Salir</button>
   </div>
 </template>
@@ -27,7 +25,7 @@ export default {
     fetch("http://localhost:8000/api/empresa", {
       headers: {
         "Content-Type": "application/json",
-        "Authorization": localStorage.getItem("token")
+        "Authorization": "JWT " + localStorage.getItem("token")
       },
     })
     .then((res) => res.json())
