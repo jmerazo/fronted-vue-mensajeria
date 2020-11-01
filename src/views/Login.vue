@@ -70,15 +70,6 @@ h1{
 	border-radius: 20px;
 
 }
-input[type="text"],
-input[type="password"]
-{
-	font-size: 10px;
-	width: 65%;
-	padding: 3px;
-	border: none;
-  margin-right: 0.5rem;
-}
 .button_form{
 	border:none;
 	width: 60%;

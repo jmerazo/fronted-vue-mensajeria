@@ -1,6 +1,6 @@
 <template>
   <h1>Crear empresa</h1>
-  <a href="/empresas">Volver</a>
+  <a href="/empresa">Volver</a>
 
   <form @submit.prevent="guardar" enctype="multipart/form-data">
     <div>
