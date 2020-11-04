@@ -86,9 +86,8 @@ export default {
 </script>
 <style>
 .header {
-  background-color: #f8f8f9;
-  color: #1f4181;
-  border-bottom: 1px solid gray;
+  background-color: #F3F9F7;
+  border-bottom: 1px solid #81718B;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
 }

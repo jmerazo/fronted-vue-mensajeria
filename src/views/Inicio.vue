@@ -1,9 +1,13 @@
 <template>
-  <div>
-    <h1>Bienvenido</h1>
-    <a href="/empresa">Empresas</a>
-    <button type="button" @click="salir">Salir</button>
-  </div>
+<section style="margin-top:2rem; margin-right:2rem;">
+    <section class="contimage">
+        <h1 class="display-1" style="text-align:center; ">!Bienvenido!</h1>
+        <div style="text-align:center;">
+        <a class="btn btn-primary"  href="/empresa">Empresas</a>
+        <button style="margin-left:0.5rem;" class="btn btn-secondary" type="button" @click="salir">Salir</button>
+      </div>
+    </section>
+</section> 
 </template>
 <script>
 import Cabecera from "@/components/Cabecera.vue";
@@ -42,3 +46,12 @@ export default {
   }
 };
 </script>
+<style>
+.contimage{
+  width:100%; 
+  margin-left:1rem;
+  margin-right:2rem;
+  height: 400px;
+  background-image:url('../assets/imagenes/transporte.png'); 
+}
+</style>

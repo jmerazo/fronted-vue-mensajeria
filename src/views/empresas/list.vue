@@ -1,7 +1,8 @@
 <template>
   <h1 align="center">Empresas</h1>
-  <a class="btn btn-success" href="/empresas/create">Agregar</a>
-  <a class="btn btn-warning" href="/">Inicio</a>
+  <a class="btn btn-success" href="/create">Agregar</a>
+   
+  <a style="margin-left:0.5rem;" class="btn btn-warning" href="/">Inicio</a>
   <table class="table table-striped" id="table">
     <thead>
       <tr class="bg-dark text-light">

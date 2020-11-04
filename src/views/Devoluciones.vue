@@ -4,8 +4,9 @@
 		<section class="contimage_ingreso">
 			<label class="label_devo">Descarga de Devoluciones</label>
 			<section class="devol_1">
+				<h4 style="text-align:center; margin-top:2rem;">Seleccione el motivo de devolución</h4>
 				<form class="devol_desc">
-					<label style="color: #1F4181; text-align: center;" >Seleccione el motivo de devolución</label><br><br>
+					
           <input name="cbdireccion_E" type="radio" />Dirección Errada-DE
 							<br />
 							<input name="cbdireccion_I" type="radio" />Dirección Incompleta-DI
@@ -26,38 +27,52 @@
 				</form>
 			</section>
       <section class="devol_2">
-				<br>
-				<br>
-					<label style="color: white;margin-left: 2rem; margin-left: 2rem;width: 90px;float: left;">
+				<form class="formulario-1">
+					<div class="form group row">
+					<label class="col-lg-4 control-label label_ingre">
 					Guía:</label>
-					<input  class="info" type="text" id="" name="" value="" readonly><br>
-					<label style="color: white;margin-left: 2rem; width: 90px;float: left;">
+					<input  class="form-control col-lg-6 info" type="text" id="" name="" value="" readonly>
+					</div>
+					<div class="form group row">
+					<label class="col-lg-4 control-label label_ingre">
 					Nombre:</label>
-					<input class="info" type="text" id="" name="" value="" readonly><br>
-					<label style="color: white;margin-left: 2rem;width: 90px;float: left;">Dirección:</label> 
-					<input class="info" type="text" id="" name="" value="" readonly><br>
-					<label style="color: white;margin-left: 2rem;width: 90px;float: left;">
+					<input class="form-control col-lg-6 info" type="text" id="" name="" value="" readonly>
+					</div>
+					<div class="form group row">
+					<label class="col-lg-4 control-label label_ingre">Dirección:</label> 
+					<input class="form-control col-lg-6 info" type="text" id="" name="" value="" readonly>
+					</div>
+					<div class="form group row">
+					<label class="col-lg-4 control-label label_ingre">
 					Ciudad:</label> 
-					<input  class="info" type="text" id="" name="" value="" readonly><br>
-					<label style="color: white;margin-left: 2rem;width: 90px;float: left;">Planilla:</label>
-					<input class="info" type="text" id="" name="" value="" readonly><br><br><br>
+					<input  class="form-control col-lg-6 info" type="text" id="" name="" value="" readonly><br>
+					</div>
+					<div class="form group row">
+					<label class="col-lg-4 control-label label_ingre">Planilla:</label>
+					<input class="form-control col-lg-6 info" type="text" id="" name="" value="" readonly><br><br><br>
+					</div>
 					<label style="color: white;margin-left: 2rem;">Empresa: Cadena</label> <br>
-					<label style="color: white;margin-left: 2rem;"> Cod.Emp : 100250</label><br><br><br>
+					<label style="color: white;margin-left: 2rem;"> Cod.Emp : 100250</label>
+				</form>
 			</section>
 		</section>
     <section class="aside_ingreso">
-			<h1>Mensajero</h1>
-			<hr>
-			<div><input onclick="location.href='registrar_mensajeros.html'" type="submit" value="Registrar" class="button_men"></div>
-			<hr>
-			<div><input onclick="location.href='asignar_correo.html'" type="submit" value="Asignar Correo" class="button_men"></div>
-			<hr>
-			<div><input onclick="location.href='reporte_correo.html'" type="submit" value="Reporte Correo" class="button_men"></div>
-			<hr>
-			<div><input onclick="location.href='planillas.html'" type="submit" value="Planillas" class="button_men"></div>
-			<hr>
-			<div><input onclick="location.href='listar_mensajeros.html'" type="submit" value="Listar Mensajeros" class="button_men">
-			</div></section>
+			<form class="formulario">
+			<h1 style="color:#4A4A4A;">Mensajero</h1>
+			<br>
+			
+			<div><input class="btn btn-secondary button_form" onclick="location.href='registrar_mensajeros.vue'" type="submit" value="Registrar" ></div>
+			
+			<div><input class="btn btn-secondary button_form" onclick="location.href='asignar_correo.vue'" type="submit" value="Asignar Correo" ></div>
+	
+			<div><input class="btn btn-secondary button_form" onclick="location.href='reporte_correo.vue'" type="submit" value="Reporte Correo" ></div>
+			
+			<div><input class="btn btn-secondary button_form" onclick="location.href='planillas.vue'" type="submit" value="Planillas" ></div>
+			
+			<div><input class="btn btn-secondary button_form" onclick="location.href='listar_mensajeros.vue'" type="submit" value="Listar Mensajeros" >
+			</div>
+			</form>
+		</section>
   </section>
 </font>
 </template>
@@ -72,14 +87,18 @@ export default {
 }
 </script>
 <style>
+
+.label_ingre{
+	color: white;
+	width: 100px;
+	border-radius: 10px; 
+	height: 35px;
+	margin-top:0%;
+}
 .info{
-  border-radius: 20px;
-  border: none;
-  padding: 2px;
-  width: 150px;
-  float: right;
-  margin-right: 0.5rem;
-  margin-top: 0.3rem;
+border-radius: 10px; 
+height: 35px;
+background: white;
 }
   .main_ingreso{
 	
@@ -89,11 +108,12 @@ export default {
 }
 .contimage_ingreso{
 	float: left;
-	width: 82%;	
+	width: 80%;	
 	margin-right: 3%;
 	border-radius: 2px;
 	background: white;
 	padding-top: 2rem;
+	margin-bottom: 4rem;
 
 
 }
@@ -109,7 +129,7 @@ export default {
 .devol_1{
 	width: 380px;
 	height: 450px;
-	background: #DCE4F3;
+	background: #CFCFCF;
 	float: left;
 	margin-top: 2rem;
 	margin-left: 6rem;
@@ -119,7 +139,7 @@ export default {
 .devol_2{
 	width: 300px;
 	height: 450px;
-	background:  #909CB4;
+	background: #777575; 
 	float: left;
 	margin-top: 2rem;
 	border-top-right-radius: 20px;
@@ -128,39 +148,51 @@ export default {
 .label_devo{
 	display: block;
 	margin-left: 6rem;
-	border-radius: 20px;
-	background: #909CB4;
+	border-radius: 10px;
+	background: #777575;
 	width: 30%;
 	text-align: center;
 	color: white;
 	margin-top: 1rem;
 }
-.devol_desc{
-	text-align: left;
-	margin-left: 2rem;
-	color: #687795;
-}
 .aside_ingreso{
 	float: left;
-	width: 15%;
-	height: 650px;
+	height: 548px;
 	box-sizing: border-box;
-	background: #C0C4CB;
+	background: #CFCFCF;
 	color: white;
+	margin-top: 2rem;
+	border-radius:10px;
 	text-align: center;
-
-
 }
-.button_men{
-	border:none;
-	width: 100%;
-	color: white;
+
+.button_form{
+	width: 90%;
 	font-size: 20px;
-	background: #909CB4;
 	padding: 4px 4px;
 	border-radius: 10px;	
 	cursor: pointer;
+	margin-top:1rem;
+}
+.devol_desc{
 	text-align: left;
+	margin-left: 3rem;
+	margin-top: 2rem;
+}
+@media(min-width: 800px)
+{
+.formulario{
+	margin:auto;
+	width:200px;
+	height: 350px;
+	margin-top: 3rem;;
+	border-radius: 10px;
+ background: #CFCFCF;
+  color: black;
+}
+.formulario-1{
+	margin-top:2rem;
+}
 }
 
 </style>
