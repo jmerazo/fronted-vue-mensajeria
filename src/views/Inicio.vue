@@ -2,6 +2,7 @@
   <div>
     <h1>Bienvenido</h1>
     <a href="/empresa">Empresas</a>
+    <a href="/usuario">Usuarios</a>
     <button type="button" @click="salir">Salir</button>
   </div>
 </template>

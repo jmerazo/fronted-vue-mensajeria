@@ -84,7 +84,7 @@ export default {
           },
         })
         .then((response) => {
-          this.$router.push("/empresas");
+          this.$router.push("/empresa");
         });
     },
   },
