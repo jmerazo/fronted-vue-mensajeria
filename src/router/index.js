@@ -2,6 +2,9 @@ import { reactive } from 'vue';
 import { createRouter, createWebHistory } from 'vue-router';
 import EmpresasList from "@/views/empresas/list.vue";
 import EmpresaActualizar from "@/views/empresas/update.vue";
+import UserList from "@/views/users/list.vue";
+import UserCreate from "@/views/users/create.vue";
+import UserUpdate from "@/views/users/update.vue";
 
 const routes = [
   {
@@ -74,6 +77,30 @@ const routes = [
     path: '/update',
     name: 'ActualizarEmpresa',
     component: EmpresaActualizar,
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/usuario',
+    name: 'ListarUsuario',
+    component: UserList,
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/usuario/create',
+    name: 'CrearUsuario',
+    component: UserCreate,
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/usuario/:id/update',
+    name: 'ActualizarUsuario',
+    component: UserUpdate,
     meta: {
       auth: true
     }

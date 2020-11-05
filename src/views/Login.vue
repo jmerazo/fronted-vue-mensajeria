@@ -86,7 +86,15 @@ export default {
 	padding: 5px;
 	border-radius: 20px;
 }
+<<<<<<< HEAD
 label{
+=======
+.button_form{
+	border:none;
+	width: 60%;
+	height: 40px;
+	color: white;
+>>>>>>> e2b5d00f1aedc055026506231160f754f7d47c0a
 	font-size: 20px;
 	width: 85%;
 	padding: 3.5px;

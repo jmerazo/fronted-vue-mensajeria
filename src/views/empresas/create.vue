@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
    <a  class="btn btn-secondary" style="margin-left:2rem; margin-top:2rem;" href="/empresa">Volver</a>
 <div class="container">
    <form @submit.prevent="guardar" enctype="multipart/form-data" class="formulario" >
@@ -14,6 +15,12 @@
     </div>
     <div class="form-group row">
       <label for="razon_social" class="col-lg-4 control-label">Razon Social</label>
+=======
+  <h1>Crear empresa</h1>
+  <a href="/empresa">Volver</a>
+
+  <form @submit.prevent="guardar" enctype="multipart/form-data">
+>>>>>>> e2b5d00f1aedc055026506231160f754f7d47c0a
     <div>
       <input class="form-control col-lg-14" type="text" v-model="empresa.razon_social" id="razon_social" />
     </div>
@@ -119,7 +126,7 @@ export default {
           },
         })
         .then((response) => {
-          this.$router.push("/empresas");
+          this.$router.push("/empresa");
         });
     },
   },
