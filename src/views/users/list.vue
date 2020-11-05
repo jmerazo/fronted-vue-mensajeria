@@ -35,7 +35,7 @@
             style="margin-left: 10px"
             href="#"
             class="btn btn-danger"
-            @click="eliminar_empresa(usuario.id)"
+            @click="eliminar_usuario(usuario.id)"
           >
             🗑️
           </a>
