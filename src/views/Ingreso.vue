@@ -1,44 +1,57 @@
 <template>
     	<section class="main_ingreso">
 		<section class="contimage_ingreso">
-
 			<label class="label_devo">Ingreso Centro de Operaciones</label>
 			<section class="ingreso_sec_1">
-				<form class="form_ingre_1">
-					<label style="color: #1F4181;margin-left: 2rem;">Empresa: Cadena</label> <br>
-					<label style="color: #1F4181;margin-left: 2rem;"> Cod.Emp : 100250</label><br><br><br>
-					<label style="color: #1F4181;margin-left: 4.5rem;">Digite el Número de Guía</label>
-					<br>
-					<input style="border-radius: 20px; border: none;padding: 10px; width: 250px; margin-left: 2rem;" type="text" name="ingre_codigo"><br><br>
-					<label style="color: #1F4181;margin-left: 5rem;">Información de Guía</label><br><br>
-					<label class="label_ingre">Guía:</label>
-					<input class="info" type="text" id="" name="" value="" readonly><br>
-					<label class="label_ingre">Nombre:</label>
-					<input class="info" type="text" id="" name="" value="" readonly><br>
-					<label class="label_ingre">Dirección:</label> 
-					<input class="info" type="text" id="" name="" value="" readonly><br>
-					<label class="label_ingre">Ciudad:</label> 
-					<input class="info" type="text" id="" name="" value="" readonly><br>
-					<label class="label_ingre">Planilla:</label>
-					<input  class="info" type="text" id="" name="" value="" readonly><br>
-							
+				<form class="form_ingre_1">	
+				<label style="color: black;margin-left: 2rem;">Empresa: Cadena</label> <br>
+					<label style="color: black;margin-left: 2rem;"> Cod.Emp : 100250</label><br><br>
+					<label style="color: black;margin-left: 3.5rem;">Digite el Número de Guía</label>
+					<input style="border-radius: 10px; border: none;padding: 5px; width: 250px; margin-left: 3rem;" type="text" name="ingre_codigo"><br>
+				
+					<label style="color: black;margin-left: 4rem;">Información de Guía</label><br><br>
+					<div class="form-group row ">
+					<label class="col-lg-4 control-label label_ingre" for="guia">Guía:</label>
+					<input class="form-control col-lg-6 info"  type="text" id="guia" name="" value="" readonly><br>
+					</div>
+					<div class="form-group row ">
+					<label class="col-lg-4 control-label label_ingre" for="nombre">Nombre:</label>
+					<input class="form-control col-lg-6 info"  type="text" id="nombre" name="" value="" readonly><br>
+					</div>
+					<div class="form-group row ">
+					<label class="col-lg-4 control-label label_ingre" for="direccion">Dirección:</label> 
+					<input class="form-control col-lg-6 info"  type="text" id="direccion" name="" value="" readonly><br>
+					</div>
+					<div class="form-group row ">
+					<label class="col-lg-4 control-label label_ingre" for="ciudad">Ciudad:</label> 
+					<input class="form-control col-lg-6 info"  type="text" id="ciudad" name="" value="" readonly><br>
+					</div>
+					<div class="form-group row ">
+					<label class="col-lg-4 control-label label_ingre" for="planilla">Planilla:</label>
+					<input class="form-control col-lg-6 info"  type="text" id="planilla" name="" value="" readonly><br>	
+					</div>
+					<div class="form-group " >
+					<input style="margin-left:3rem; border-radius:10px;" placeholder="Cantidad: " class="form-control col-lg-8"  type="text" name="" value="" readonly><br>	
+					</div>			
 				</form>
 			</section>
-			<input class="cant" type="text" id="" name="" value="" readonly>
 		</section> 
 		<section class="aside_ingreso">
-			<h1>Mensajero</h1>
-			<hr>
-			<div><input onclick="location.href='registrar_mensajeros.html'" type="submit" value="Registrar" class="button_men"></div>
-			<hr>
-			<div><input onclick="location.href='asignar_correo.html'" type="submit" value="Asignar Correo" class="button_men"></div>
-			<hr>
-			<div><input onclick="location.href='reporte_correo.html'" type="submit" value="Reporte Correo" class="button_men"></div>
-			<hr>
-			<div><input onclick="location.href='planillas.html'" type="submit" value="Planillas" class="button_men"></div>
-			<hr>
-			<div><input onclick="location.href='listar_mensajeros.html'" type="submit" value="Listar Mensajeros" class="button_men">
+			<form class="formulario">
+			<h1 style="color:#4A4A4A;">Mensajero</h1>
+			<br>
+			
+			<div><input class="btn btn-secondary button_form" onclick="location.href='registrar_mensajeros.vue'" type="submit" value="Registrar" ></div>
+			
+			<div><input class="btn btn-secondary button_form" onclick="location.href='asignar_correo.vue'" type="submit" value="Asignar Correo" ></div>
+	
+			<div><input class="btn btn-secondary button_form" onclick="location.href='reporte_correo.vue'" type="submit" value="Reporte Correo" ></div>
+			
+			<div><input class="btn btn-secondary button_form" onclick="location.href='planillas.vue'" type="submit" value="Planillas" ></div>
+			
+			<div><input class="btn btn-secondary button_form" onclick="location.href='listar_mensajeros.vue'" type="submit" value="Listar Mensajeros" >
 			</div>
+			</form>
 		</section>
 	</section>
 </template>
@@ -54,32 +67,23 @@ export default {
 </script>
 <style >
 .label_ingre{
-	color: #1F4181;
-	margin-left: 1rem;
+	color: black;
 	width: 100px;
-	
-
+	border-radius: 10px; 
+	height: 35px;
+	margin-top:0%;
 }
 .info{
-	border-radius: 20px;
-	border: none;
+border-radius: 10px; 
+height: 35px;
+background: white;
+}
 
-}
-.cant{
-	display: block;
-	margin-left: 9rem;
-	background: #909CB4;
-	width: 200px;
-	border-radius: 20px;
-	border: none;
-	padding: 2px;
-	margin-top: 30rem;
-}
 .label_devo{
 	display: block;
 	margin-left: 7rem;
-	border-radius: 20px;
-	background: #909CB4;
+	border-radius: 10px;
+	background: #777575; 
 	width: 30%;
 	text-align: center;
 	color: white;
@@ -88,19 +92,17 @@ export default {
 .main_ingreso{
 	
 	width: 100%; 
-	width: auto;
-	
+	width: auto;	
 }
-	.contimage_ingreso{
+.contimage_ingreso{
 	float: left;
-	width: 82%;	
+	width: 80%;	
 	height: 520px;
 	margin-right: 3%;
-	border-radius: 2px;
+	border-radius: 20px;
 	background: white;
-	padding-top: 2rem;
-
-
+	padding-top: 1rem;
+	
 }
 .contimage_ingre{
 	float: left;
@@ -111,33 +113,48 @@ export default {
 }
 .ingreso_sec_1{
 	width: 340px;
-	height: 450px;
-	background: #DCE4F3;
+	height: 600px;
+	background: #CFCFCF;
 	float: left;
 	margin-top: 1rem;
 	margin-left: 6rem;
 	border-radius: 20px;
+	margin-bottom: 4rem;
 }
 .aside_ingreso{
 	float: left;
-	width: 15%;
-	height: 650px;
+	height: 680px;
 	box-sizing: border-box;
-	background: #C0C4CB;
+	background: #CFCFCF;
 	color: white;
+	margin-top: 2rem;
+	border-radius:10px;
 	text-align: center;
 
-
 }
-.button_men{
-	border:none;
-	width: 100%;
-	color: white;
+.button_form{
+	width: 90%;
 	font-size: 20px;
-	background: #909CB4;
 	padding: 4px 4px;
 	border-radius: 10px;	
 	cursor: pointer;
-	text-align: left;
+	margin-top:1rem;
+}
+@media(min-width: 800px)
+{
+.formulario{
+	margin:auto;
+	width:200px;
+	height: 350px;
+	margin-top: 3rem;;
+	border-radius: 10px;
+ background: #CFCFCF;
+  color: black;
+}
+.form_ingre_1{
+ background: #CFCFCF;
+ border-radius: 20px;
+  color: black;
+}
 }
 </style>

@@ -11,7 +11,7 @@ export default {
 </script>
 <style>
 .footer_ingreso{
-	background: #1F4181;
+	background: #777575; 
 	text-align: center;
 	position: fixed;
 	bottom: 0;
@@ -19,6 +19,6 @@ export default {
 	height: 35px;
 	color: white;
 	border-top-right-radius: 20px;
-	border-top-left-radius: 20px;
+	border-top-left-radius: 20px;;
 }
 </style>
