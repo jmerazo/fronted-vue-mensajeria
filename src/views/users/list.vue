@@ -1,6 +1,6 @@
 <template>
   <h1 align="center">Usuarios</h1>
-  <a class="btn btn-success" href="/users/create">Agregar</a>
+  <a class="btn btn-success" href="/usuario/create">Agregar</a>
   <a class="btn btn-warning" href="/">Inicio</a>
 
   <table class="table table-striped" id="table">
@@ -75,7 +75,7 @@ export default {
     }); */
     },
     eliminar_usuario(id) {
-      axios.delete("http://localhost:8000/api/usuarios" + id, {
+      axios.delete("http://localhost:8000/api/usuarios/" + id, {
         headers: {
           "Authorization": "JWT " + localStorage.getItem("token")
         },

@@ -74,7 +74,7 @@ const routes = [
     }
   },
   {
-    path: '/update',
+    path: '/empresa/:id/update',
     name: 'ActualizarEmpresa',
     component: EmpresaActualizar,
     meta: {

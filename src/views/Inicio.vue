@@ -1,22 +1,14 @@
 <template>
-<<<<<<< HEAD
 <section style="margin-top:2rem; margin-right:2rem;">
     <section class="contimage">
         <h1 class="display-1" style="text-align:center; ">!Bienvenido!</h1>
         <div style="text-align:center;">
         <a class="btn btn-primary"  href="/empresa">Empresas</a>
+         <a style="margin-left:10px" class="btn btn-primary"  href="/usuario">Usuarios</a>
         <button style="margin-left:0.5rem;" class="btn btn-secondary" type="button" @click="salir">Salir</button>
       </div>
     </section>
 </section> 
-=======
-  <div>
-    <h1>Bienvenido</h1>
-    <a href="/empresa">Empresas</a>
-    <a href="/usuario">Usuarios</a>
-    <button type="button" @click="salir">Salir</button>
-  </div>
->>>>>>> e2b5d00f1aedc055026506231160f754f7d47c0a
 </template>
 <script>
 import Cabecera from "@/components/Cabecera.vue";
