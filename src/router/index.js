@@ -5,6 +5,7 @@ import EmpresaActualizar from "@/views/empresas/update.vue";
 import UserList from "@/views/users/list.vue";
 import UserCreate from "@/views/users/create.vue";
 import UserUpdate from "@/views/users/update.vue";
+import UploadBD from "@/views/bd/upload.vue";
 
 const routes = [
   {
@@ -101,6 +102,14 @@ const routes = [
     path: '/usuario/:id/update',
     name: 'ActualizarUsuario',
     component: UserUpdate,
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/uploadbd',
+    name: 'SubirBasedeDatos',
+    component: UploadBD,
     meta: {
       auth: true
     }

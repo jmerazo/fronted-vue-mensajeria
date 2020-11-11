@@ -4,7 +4,8 @@
         <h1 class="display-1" style="text-align:center; ">!Bienvenido!</h1>
         <div style="text-align:center;">
         <a class="btn btn-primary"  href="/empresa">Empresas</a>
-         <a style="margin-left:10px" class="btn btn-primary"  href="/usuario">Usuarios</a>
+        <a style="margin-left:10px" class="btn btn-primary"  href="/usuario">Usuarios</a>
+        <a style="margin-left:10px" class="btn btn-primary"  href="/uploadbd">SubirBD</a>
         <button style="margin-left:0.5rem;" class="btn btn-secondary" type="button" @click="salir">Salir</button>
       </div>
     </section>
