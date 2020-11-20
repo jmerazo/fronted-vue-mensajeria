@@ -158,9 +158,18 @@ const routes = [
     name: 'CrearEstado',
     component: State,
   },
-  {path: '/reporte',
+  {
+    path: '/reporte',
     name: 'Reporte',
     component: () => import('../views/mensajeros/reporte_correo.vue'),
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/listarbd',
+    name: 'ListarBD',
+    component: () => import('../views/bd/list.vue'),
     meta: {
       auth: true
     }

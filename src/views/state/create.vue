@@ -25,17 +25,6 @@
             id="servicio"
           />
         </div>
-        <br>
-        <div>
-          <label for="usuario" class="col-lg-4 control-label">Imagen</label>
-          <input
-            style="margin-left: 2.5rem"
-            class="form-control col-lg-10"
-            type="file"
-            @change="obtenerImagen"
-            id="logo"
-          />
-        </div>
       </div>
 
       <div class="div-final">

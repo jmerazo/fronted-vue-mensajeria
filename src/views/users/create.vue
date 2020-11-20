@@ -125,7 +125,8 @@ export default {
             is_active: true,
             groups: [],
             user_permissions: [],
-
+          },
+          {
           headers: {
             Authorization: "JWT " + localStorage.getItem("token"),
           },

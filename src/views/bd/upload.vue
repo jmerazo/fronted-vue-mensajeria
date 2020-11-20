@@ -5,6 +5,12 @@
     href="/"
     >Volver</a
   >
+  <a
+    class="btn btn-secondary"
+    style="margin-left: 2rem; margin-top: 2rem"
+    href="/listarbd"
+    >ListarBD</a
+  >
   <div class="container">
     <form
       @submit.prevent="guardar"

@@ -7,12 +7,12 @@
 				<label style="color: black;margin-left: 2rem;">Empresa: Cadena</label> <br>
 					<label style="color: black;margin-left: 2rem;"> Cod.Emp : 100250</label><br><br>
 					<label style="color: black;margin-left: 3.5rem;">Digite el Número de Guía</label>
-					<input style="border-radius: 10px; border: none;padding: 5px; width: 250px; margin-left: 3rem;" type="text" name="ingre_codigo"><br>
+					<input style="border-radius: 10px; border: none;padding: 5px; width: 250px; margin-left: 3rem;" v-model="num_guia" type="text" id="num_guia" name="ingre_codigo"><br>
 				
 					<label style="color: black;margin-left: 4rem;">Información de Guía</label><br><br>
 					<div class="form-group row ">
 					<label class="col-lg-4 control-label label_ingre" for="guia">Guía:</label>
-					<input class="form-control col-lg-6 info"  type="text" id="guia" name="" value="" readonly><br>
+					<input class="form-control col-lg-6 info" type="text" id="guia" readonly><br>
 					</div>
 					<div class="form-group row ">
 					<label class="col-lg-4 control-label label_ingre" for="nombre">Nombre:</label>
@@ -85,9 +85,15 @@
 import Cabecera from '@/components/Cabecera.vue'
 import Footer from '@/components/Footer.vue'
 export default {
+	name: "IngresoCO",
     components: {
     Cabecera,
-    Footer
+	Footer,
+	data() {
+		return{
+			num_guia: "",
+		};
+	},
   }
 }
 </script>

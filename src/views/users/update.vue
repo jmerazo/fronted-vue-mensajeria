@@ -7,6 +7,12 @@
 </div>
 <br>
     <div class="form-group row">
+      <label for="usuario" class="col-lg-4 control-label">Usuario</label>
+      <div>
+      <input class="form-control col-lg-14" type="text" v-model="username" id="usuario" />
+      </div>
+    </div>
+    <div class="form-group row">
       <label for="nombres" class="col-lg-4 control-label">Nombres</label>
       <div>
       <input class="form-control col-lg-14" type="text" v-model="nombres" id="nombres" />
@@ -16,6 +22,18 @@
       <label for="apellidos" class="col-lg-4 control-label">Apellidos</label>
     <div>
       <input class="form-control col-lg-14" type="text" v-model="apellidos" id="apellidos" />
+    </div>
+    </div>
+    <div class="form-group row">
+      <label for="password" class="col-lg-4 control-label">Contraseña</label>
+    <div>
+      <input class="form-control col-lg-14" type="text" v-model="cpassword" id="password" />
+    </div>
+    </div>
+    <div class="form-group row">
+      <label for="cpassword" class="col-lg-4 control-label">Confirmar Contraseña</label>
+    <div>
+      <input class="form-control col-lg-14" type="text" v-model="password" id="apellidos" />
     </div>
     </div>
     <div class="form-group row">
@@ -39,9 +57,11 @@ export default {
   data() {
     return {
         id: null,
+        username: "",
         nombres: "",
         apellidos: "",
         correo: "",
+        password: "",
     };
   },
   mounted() {
@@ -55,16 +75,21 @@ export default {
         console.log(response)
         this.nombres = response.data.first_name,
         this.apellidos = response.data.last_name,
-        this.correo = response.data.email
+        this.correo = response.data.email,
+        this.username = response.data.username
     });
   },
   methods: {
     guardar() {
       axios
-        .put("http://localhost:8000/api/usuarios/", this.id, {
+        .put("http://localhost:8000/api/usuarios/" + this.id, {
             first_name: this.nombres,
             last_name: this.apellidos,
             email: this.correo,
+            username: this.username,
+            password: this.password
+          },
+          {
           headers: {
             Authorization: "JWT " + localStorage.getItem("token"),
           },

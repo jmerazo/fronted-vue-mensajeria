@@ -7,7 +7,7 @@
         <a style="margin-left:10px" class="btn btn-primary"  href="/usuario">Usuarios</a>
         <a style="margin-left:10px" class="btn btn-primary"  href="/uploadbd">SubirBD</a>
         <a style="margin-left:10px" class="btn btn-primary"  href="/servicio">Servicios</a><br>
-        <a style="margin-left:10px; margin-top:10px" class="btn btn-primary"  href="/evidencia">Evidencias</a>
+        <a style="margin-left:10px; margin-top:10px" class="btn btn-primary"  href="/estado">Estado</a>
         <button style="margin-left:0.5rem; margin-top:10px" class="btn btn-secondary" type="button" @click="salir">Salir</button>
       </div>
     </section>

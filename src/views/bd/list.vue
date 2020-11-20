@@ -1,0 +1,193 @@
+<template>
+<section class="main_ingreso1">
+<section class="contimage_ingreso1">
+  <h1 align="center">Base de datos Upload</h1>
+  <a
+    class="btn btn-secondary"
+    style="margin-left: 2rem"
+    href="/uploadbd"
+    >Volver</a
+  >
+   
+  <a style="margin-left:0.5rem;" class="btn btn-warning" href="/">Inicio</a>
+  <table class="table table-striped" id="table">
+    <thead>
+      <tr class="bg-dark text-light">
+        <td>Id</td>
+        <td>Guia</td>
+        <td>Nombres</td>
+        <td>Tipo servicio</td>
+        <td>Ciudad</td>
+        <td>Fecha estado</td>
+        <td>Fecha ingreso</td>
+        <td>Empresa</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="tercero in terceros" :key="tercero.id">
+        <td>{{ tercero.id }}</td>
+        <td>{{ tercero.guia_numero }}</td>
+        <td>{{ tercero.nombre_tercero }}</td>
+        <td>{{ tercero.tipo_servicio }}</td>
+        <td>{{ tercero.ciudad_tercero }}</td>
+        <td>{{ tercero.fecha_estado }}</td>
+        <td>{{ tercero.fecha_ingreso }}</td>
+        <td>{{ tercero.empresa_id }}</td>
+       <!--  <div>
+          <a :href="`/empresa/${empresa.id}/update`" class="btn btn-success">
+             ✏️
+          </a>
+          <a
+            style="margin-left: 10px"
+            href="#"
+            class="btn btn-danger"
+            @click="eliminar_empresa(empresa.id)"
+          >
+            🗑️
+          </a>
+        </div> -->
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section class="aside_ingreso1">
+			<h1 style="color:#4A4A4A;">Mensajero</h1>
+			<div>
+      <input
+        onclick="location.href='/registrarmensajeros'"
+        type="submit"
+        value="Registrar"
+        class="btn btn-secondary button_form1"
+      />
+    </div>
+    <div>
+      <input
+        onclick="location.href='/asignar'"
+        type="submit"
+        value="Asignar Correo"
+        class="btn btn-secondary button_form1"
+      />
+    </div>
+    <div>
+      <input
+        onclick="location.href='/reporte'"
+        type="submit"
+        value="Reporte Correo"
+        class="btn btn-secondary button_form1"
+      />
+    </div>
+    <div>
+      <input
+        onclick="location.href='/planillas'"
+        type="submit"
+        value="Planillas"
+        class="btn btn-secondary button_form1"
+      />
+    </div>
+    <div>
+      <input
+        onclick="location.href='/listar'"
+        type="submit"
+        value="Listar Mensajeros"
+        class="btn btn-secondary button_form1"
+      />
+    </div>
+		</section>
+</section>
+</template>
+
+<script>
+import axios from "axios";
+
+export default {
+  name: "Terceros",
+  data() {
+    return {
+      terceros: [],
+    };
+  },
+  mounted() {
+    this.traerTerceros();    
+  },
+  methods: {
+    traerTerceros(){
+      axios.get("http://localhost:8000/api/terceros", {
+        headers: {
+          "Authorization": "JWT " + localStorage.getItem("token")
+        },
+    })
+    .then(response => {
+        console.log(response.data);
+        this.terceros = response.data
+    })
+    /* .catch(err =>{
+              this.error = true;
+    }); */
+    },
+/*     eliminar_empresa(id) {
+      axios.delete("http://localhost:8000/api/empresa/" + id, {
+        headers: {
+          "Authorization": "JWT " + localStorage.getItem("token")
+        },
+      })
+          .then(() => {
+            this.traerEmpresas();
+          });          
+    } */
+  }
+};
+</script>
+
+<style>
+* {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.contimage_ingreso1{
+	float: left;
+	width: 80%;	
+  margin-right: 1%;
+	height: 520px;
+	background: white;
+	padding-top: 1rem;
+	
+}
+.button_form1{
+	width: 90%;
+	font-size: 20px;
+	padding: 4px 4px;
+	border-radius: 10px;	
+	cursor: pointer;
+	margin-top:1rem;
+}
+.aside_ingreso1{
+	float: left;
+	height: 519px;
+	box-sizing: border-box;
+	background: #CFCFCF;
+	color: white;
+	margin-top: 2rem;
+	border-radius:10px;
+	text-align: center;
+
+}
+.main_ingreso1{
+	
+	width: 100%; 
+	width: auto;
+	
+}
+
+@media(min-width: 800px)
+{
+.formulario1{
+  width: 200px;
+	height: 350px;
+	margin-top: 3rem;;
+	border-radius: 10px;
+ background: #CFCFCF;
+  color: black;
+}
+}
+
+</style>

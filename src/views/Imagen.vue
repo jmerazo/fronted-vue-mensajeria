@@ -27,7 +27,7 @@
             </section>
             <section class="conte_ingreso4">
               <div class="row">
-                <div class="col-12 col-sm-6 col-md-4" v-for='imagen in imagenes'>
+                <div class="col-12 col-sm-6 col-md-4" v-for="imagen in imagenes">
                   <div class="card">
                     <img :src="imagen.url" class="card-img-top" alt="" />
                     <div class="card-body">
