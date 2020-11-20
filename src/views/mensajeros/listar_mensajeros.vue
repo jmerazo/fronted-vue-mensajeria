@@ -1,57 +1,40 @@
 <template>
 <section class="main_ingreso1">
 <section class="contimage_ingreso1">
-  <h1 align="center">Empresas</h1>
-  <a class="btn btn-success" href="/create">Agregar</a>
-   
-  <a style="margin-left:0.5rem;" class="btn btn-warning" href="/">Inicio</a>
+  <h1 align="center">Mensajeros Putumayo</h1>
+  <br>
+
   <table class="table table-striped" id="table">
-    <thead>
-      <tr class="bg-dark text-light">
+    <thead class="thead-dark">
+      <tr class="table-dark " style="color:black;">
         <td>ID</td>
         <td>Nombre</td>
-        <td>Razon Social</td>
-        <td>Nit</td>
+        <td>Apellido</td>
         <td>Dirección</td>
         <td>Ciudad</td>
-        <td>Departamento</td>
-        <td>Acción</td>
+        <td>Celular</td>
       </tr>
     </thead>
-    <tbody>
-      <tr v-for="empresa in empresas" :key="empresa.id">
-        <td>{{ empresa.id }}</td>
-        <td>{{ empresa.nombre }}</td>
-        <td>{{ empresa.razon_social }}</td>
-        <td>{{ empresa.nit }}</td>
-        <td>{{ empresa.direccion_empresa }}</td>
-        <td>{{ empresa.ciudad_empresa }}</td>
-        <td>{{ empresa.departamento_empresa }}</td>
-        <div>
-          <a :href="`/empresa/${empresa.id}/update`" class="btn btn-success">
-             ✏️
-          </a>
-          <a
-            style="margin-left: 10px"
-            href="#"
-            class="btn btn-danger"
-            @click="eliminar_empresa(empresa.id)"
-          >
-            🗑️
-          </a>
-        </div>
+   <!-- <tbody>
+      <tr v-for="mensajero in mensajeros" :key="mensajero.id">
+        <td>{{ mensajero.id }}</td>
+        <td>{{ mensajero.nombre }}</td>
+        <td>{{ mensajero.apellido }}</td>
+        <td>{{ mensajero.direccion_mensajero }}</td>
+        <td>{{ mensajero.ciudad_mensajero }}</td>
+        <td>{{ mensajero.celular_mensajero }}</td>
       </tr>
-    </tbody>
+    </tbody>-->
   </table>
 </section>
-<section class="aside_ingreso1">
+<section class="aside_ingreso">
 			<h1 style="color:#4A4A4A;">Mensajero</h1>
 			<div>
       <input
         onclick="location.href='/registrarmensajeros'"
         type="submit"
         value="Registrar"
-        class="btn btn-secondary button_form1"
+        class="btn btn-secondary button_form"
       />
     </div>
     <div>
@@ -59,7 +42,7 @@
         onclick="location.href='/asignar'"
         type="submit"
         value="Asignar Correo"
-        class="btn btn-secondary button_form1"
+        class="btn btn-secondary button_form"
       />
     </div>
     <div>
@@ -67,7 +50,7 @@
         onclick="location.href='/reporte'"
         type="submit"
         value="Reporte Correo"
-        class="btn btn-secondary button_form1"
+        class="btn btn-secondary button_form"
       />
     </div>
     <div>
@@ -75,7 +58,7 @@
         onclick="location.href='/planillas'"
         type="submit"
         value="Planillas"
-        class="btn btn-secondary button_form1"
+        class="btn btn-secondary button_form"
       />
     </div>
     <div>
@@ -83,7 +66,7 @@
         onclick="location.href='/listar'"
         type="submit"
         value="Listar Mensajeros"
-        class="btn btn-secondary button_form1"
+        class="btn btn-secondary button_form"
       />
     </div>
 		</section>
@@ -137,6 +120,7 @@ export default {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+
 .contimage_ingreso1{
 	float: left;
 	width: 80%;	
@@ -146,23 +130,28 @@ export default {
 	padding-top: 1rem;
 	
 }
-.button_form1{
-	width: 90%;
+.button_form{
+	width: 82%;
 	font-size: 20px;
 	padding: 4px 4px;
 	border-radius: 10px;	
 	cursor: pointer;
 	margin-top:1rem;
+  margin-left: 1rem;
+
 }
-.aside_ingreso1{
-	float: left;
+.aside_ingreso{
+	float: right;
 	height: 519px;
+  width: 15%;
+  margin-right: 1%;
 	box-sizing: border-box;
 	background: #CFCFCF;
 	color: white;
 	margin-top: 2rem;
 	border-radius:10px;
 	text-align: center;
+  margin-bottom: 4rem;
 
 }
 .main_ingreso1{

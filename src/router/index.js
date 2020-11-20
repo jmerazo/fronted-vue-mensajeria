@@ -114,6 +114,46 @@ const routes = [
       auth: true
     }
   },
+  {
+    path: '/asignar',
+    name: 'AsignarCorreo',
+    component: () => import('../views/mensajeros/asignar_correo.vue'),   
+     meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/listar',
+    name: 'Listar',
+    component: () => import('../views/mensajeros/listar_mensajeros.vue'),
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/planillas',
+    name: 'Planillas',
+    component: () => import('../views/mensajeros/planillas.vue'),
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/registrarmensajeros',
+    name: 'RegistrarMensajeros',
+    component: () => import('@/views/mensajeros/registrar_mensajeros.vue'),
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/reporte',
+    name: 'Reporte',
+    component: () => import('../views/mensajeros/reporte_correo.vue'),
+    meta: {
+      auth: true
+    }
+  },
 ]
 
 const router = createRouter({
