@@ -27,12 +27,11 @@
             </section>
             <section class="conte_ingreso4">
               <div class="row">
-                <div
-                  class="col-12 col-sm-6 col-md-4" v-for="imagen in imagenes">
+                <div class="col-12 col-sm-6 col-md-4" v-for='imagen in imagenes'>
                   <div class="card">
                     <img :src="imagen.url" class="card-img-top" alt="" />
                     <div class="card-body">
-                      <h5 class="card-title">{{ imagen.created_at }}</h5>
+                      
                     </div>
                   </div>
                 </div>
@@ -43,54 +42,49 @@
       </section>
     </section>
   </section>
-  <section class="aside_ingreso">
-    <h1>Mensajero</h1>
-    <hr />
-    <div>
+  	<section class="aside_ingreso">
+			<h1 style="color:#4A4A4A;">Mensajero</h1>
+			<div>
       <input
-        onclick="location.href='registrar_mensajeros.html'"
+        onclick="location.href='/registrarmensajeros'"
         type="submit"
         value="Registrar"
-        class="button_men"
+        class="btn btn-secondary button_form"
       />
     </div>
-    <hr />
     <div>
       <input
-        onclick="location.href='asignar_correo.html'"
+        onclick="location.href='/asignar'"
         type="submit"
         value="Asignar Correo"
-        class="button_men"
+        class="btn btn-secondary button_form"
       />
     </div>
-    <hr />
     <div>
       <input
-        onclick="location.href='reporte_correo.html'"
+        onclick="location.href='/reporte'"
         type="submit"
         value="Reporte Correo"
-        class="button_men"
+        class="btn btn-secondary button_form"
       />
     </div>
-    <hr />
     <div>
       <input
-        onclick="location.href='planillas.html'"
+        onclick="location.href='/planillas'"
         type="submit"
         value="Planillas"
-        class="button_men"
+        class="btn btn-secondary button_form"
       />
     </div>
-    <hr />
     <div>
       <input
-        onclick="location.href='listar_mensajeros.html'"
+        onclick="location.href='/listar'"
         type="submit"
         value="Listar Mensajeros"
-        class="button_men"
+        class="btn btn-secondary button_form"
       />
     </div>
-  </section>
+		</section>
 </template>
 <script>
 import Footer from "@/components/Footer.vue";
@@ -183,25 +177,24 @@ export default {
   margin-top: 2rem;
   margin-right: 2rem;
 }
-.aside_ingreso {
-  float: left;
-  width: 15%;
-  height: 650px;
-  box-sizing: border-box;
-  background: #c0c4cb;
-  color: white;
-  text-align: center;
+.aside_ingreso{
+	float: left;
+	height: 519px;
+	box-sizing: border-box;
+	background: #CFCFCF;
+	color: white;
+	margin-top: 2rem;
+	border-radius:10px;
+	text-align: center;
+
 }
-.button_men {
-  border: none;
-  width: 100%;
-  color: white;
-  font-size: 20px;
-  background: #909cb4;
-  padding: 4px 4px;
-  border-radius: 10px;
-  cursor: pointer;
-  text-align: left;
+.button_form{
+	width: 90%;
+	font-size: 20px;
+	padding: 4px 4px;
+	border-radius: 10px;	
+	cursor: pointer;
+	margin-top:1rem;
 }
 .button_imag {
   border: none;

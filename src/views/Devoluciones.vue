@@ -56,22 +56,48 @@
 				</form>
 			</section>
 		</section>
-    <section class="aside_ingreso">
-			<form class="formulario">
+    	<section class="aside_ingreso">
 			<h1 style="color:#4A4A4A;">Mensajero</h1>
-			<br>
-			
-			<div><input class="btn btn-secondary button_form" onclick="location.href='registrar_mensajeros.vue'" type="submit" value="Registrar" ></div>
-			
-			<div><input class="btn btn-secondary button_form" onclick="location.href='asignar_correo.vue'" type="submit" value="Asignar Correo" ></div>
-	
-			<div><input class="btn btn-secondary button_form" onclick="location.href='reporte_correo.vue'" type="submit" value="Reporte Correo" ></div>
-			
-			<div><input class="btn btn-secondary button_form" onclick="location.href='planillas.vue'" type="submit" value="Planillas" ></div>
-			
-			<div><input class="btn btn-secondary button_form" onclick="location.href='listar_mensajeros.vue'" type="submit" value="Listar Mensajeros" >
-			</div>
-			</form>
+			<div>
+      <input
+        onclick="location.href='/registrarmensajeros'"
+        type="submit"
+        value="Registrar"
+        class="btn btn-secondary button_form"
+      />
+    </div>
+    <div>
+      <input
+        onclick="location.href='/asignar'"
+        type="submit"
+        value="Asignar Correo"
+        class="btn btn-secondary button_form"
+      />
+    </div>
+    <div>
+      <input
+        onclick="location.href='/reporte'"
+        type="submit"
+        value="Reporte Correo"
+        class="btn btn-secondary button_form"
+      />
+    </div>
+    <div>
+      <input
+        onclick="location.href='/planillas'"
+        type="submit"
+        value="Planillas"
+        class="btn btn-secondary button_form"
+      />
+    </div>
+    <div>
+      <input
+        onclick="location.href='/listar'"
+        type="submit"
+        value="Listar Mensajeros"
+        class="btn btn-secondary button_form"
+      />
+    </div>
 		</section>
   </section>
 </font>
