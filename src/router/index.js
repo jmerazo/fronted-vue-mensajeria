@@ -6,6 +6,8 @@ import UserList from "@/views/users/list.vue";
 import UserCreate from "@/views/users/create.vue";
 import UserUpdate from "@/views/users/update.vue";
 import UploadBD from "@/views/bd/upload.vue";
+import TypeService from "@/views/services/create.vue";
+import State from "@/views/state/create.vue";
 
 const routes = [
   {
@@ -110,6 +112,22 @@ const routes = [
     path: '/uploadbd',
     name: 'SubirBasedeDatos',
     component: UploadBD,
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/servicio',
+    name: 'CrearServicio',
+    component: TypeService,
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/estado',
+    name: 'CrearEstado',
+    component: State,
     meta: {
       auth: true
     }

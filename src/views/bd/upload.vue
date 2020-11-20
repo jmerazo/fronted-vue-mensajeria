@@ -19,9 +19,11 @@
           <input
             style="margin-left: 2.5rem"
             class="form-control col-lg-10"
+            ref="file"
             type="file"
-            @change="obtenerImagen"
-            id="logo"
+            id="file"
+            v-on:change="handleFileUpload()" 
+            accept=".XLSX, .CSV"
           />
       </div>
 
@@ -34,5 +36,33 @@
 </template>
 
 <script>
-export default {};
+export default {
+    data(){
+        return {
+            file: ''
+        }
+    },
+    methods: {
+        EventSubir(){
+            let formData = new FormData();
+            formData.append('file', this.file);
+            axios
+                .post('/import-excel-personas',
+                    formData, {
+                        headers: {
+                            'Content-Type': 'multipart/form-data'
+                        }
+                    }
+                ).then(function(){
+                    console.log('SUCCESS!!');
+                })
+                .catch(function(){
+                    console.log('FAILURE!!');
+                });
+        },
+        handleFileUpload(){
+            this.file = this.$refs.file.files[0];
+        }
+    }
+};
 </script>
