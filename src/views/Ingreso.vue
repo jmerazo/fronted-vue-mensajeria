@@ -3,103 +3,85 @@
     type="button"
     class="btn btn-secondary"
     style="margin-left: 2rem; margin-top: 2rem"
-    @click="search_guia"
-  >
+    @click="traerPersona">
     Search
   </button>
+
   <section class="main_ingreso">
     <section class="contimage_ingreso">
       <label class="label_devo">Ingreso Centro de Operaciones</label>
       <section class="ingreso_sec_1">
         <form class="form_ingre_1">
-          <label style="color: black; margin-left: 2rem">Empresa: Cadena</label>
-          <br />
-          <label style="color: black; margin-left: 2rem">
-            Cod.Emp : 100250</label
-          ><br /><br />
-          <label style="color: black; margin-left: 3.5rem"
-            >Digite el Número de Guía</label
-          >
+
+          <label style="color: black; margin-left: 2rem">Empresa: Cadena</label><br/>
+          <label style="color: black; margin-left: 2rem">Cod.Emp : 100250</label><br /><br />
+          <label style="color: black; margin-left: 3.5rem">Digite el Número de Guía</label>
+
           <input
             style="
               border-radius: 10px;
               border: none;
               padding: 5px;
               width: 250px;
-              margin-left: 3rem;
-            "
-            v-model="num_guia"
+              margin-left: 3rem;"
+            v-model="numero"
             type="text"
-            id="num_guia"
-            name="ingre_codigo"
-          /><br />
+            id="numero"
+            name="ingre_codigo"><br/>
 
-          <label style="color: black; margin-left: 4rem"
-            >Información de Guía</label
-          ><br /><br />
+          <label style="color: black; margin-left: 4rem">Información de Guía</label><br/><br/>
+
           <div class="form-group row">
-            <label class="col-lg-4 control-label label_ingre" for="guia"
-              >Guía:</label
-            >
+            <label class="col-lg-4 control-label label_ingre" for="guia">Guía:</label>
             <input
               class="form-control col-lg-6 info"
               type="text"
-              id="guia"
-              readonly
-            /><br />
+              id="guia"><br/>
           </div>
+
           <div class="form-group row">
-            <label class="col-lg-4 control-label label_ingre" for="nombre"
-              >Nombre:</label
-            >
+            <label class="col-lg-4 control-label label_ingre">Nombre:</label>
             <input
               class="form-control col-lg-6 info"
               type="text"
-              id="nombre"
               name=""
               value=""
-              readonly
             /><br />
           </div>
+
           <div class="form-group row">
-            <label class="col-lg-4 control-label label_ingre" for="direccion"
-              >Dirección:</label
-            >
+            <label class="col-lg-4 control-label label_ingre" for="direccion">Dirección:</label>
             <input
               class="form-control col-lg-6 info"
               type="text"
               id="direccion"
               name=""
               value=""
-              readonly
             /><br />
           </div>
+
           <div class="form-group row">
-            <label class="col-lg-4 control-label label_ingre" for="ciudad"
-              >Ciudad:</label
-            >
+            <label class="col-lg-4 control-label label_ingre" for="ciudad">Ciudad:</label>
             <input
               class="form-control col-lg-6 info"
               type="text"
               id="ciudad"
               name=""
               value=""
-              readonly
             /><br />
           </div>
+
           <div class="form-group row">
-            <label class="col-lg-4 control-label label_ingre" for="planilla"
-              >Planilla:</label
-            >
+            <label class="col-lg-4 control-label label_ingre" for="planilla">Planilla:</label>
             <input
               class="form-control col-lg-6 info"
               type="text"
               id="planilla"
               name=""
               value=""
-              readonly
             /><br />
           </div>
+
           <div class="form-group">
             <input
               style="margin-left: 3rem; border-radius: 10px"
@@ -108,88 +90,95 @@
               type="text"
               name=""
               value=""
-              readonly
             /><br />
           </div>
+
         </form>
       </section>
-    </section>
-    <section class="aside_ingreso">
-      <h1 style="color: #4a4a4a">Mensajero</h1>
-      <div>
-        <input
-          onclick="location.href='/registrarmensajeros'"
-          type="submit"
-          value="Registrar"
-          class="btn btn-secondary button_form"
-        />
-      </div>
-      <div>
-        <input
-          onclick="location.href='/asignar'"
-          type="submit"
-          value="Asignar Correo"
-          class="btn btn-secondary button_form"
-        />
-      </div>
-      <div>
-        <input
-          onclick="location.href='/reporte'"
-          type="submit"
-          value="Reporte Correo"
-          class="btn btn-secondary button_form"
-        />
-      </div>
-      <div>
-        <input
-          onclick="location.href='/planillas'"
-          type="submit"
-          value="Planillas"
-          class="btn btn-secondary button_form"
-        />
-      </div>
-      <div>
-        <input
-          onclick="location.href='/listar'"
-          type="submit"
-          value="Listar Mensajeros"
-          class="btn btn-secondary button_form"
-        />
-      </div>
-    </section>
+    </section>    
   </section>
 </template>
+
 <script>
 import axios from "axios";
 import Cabecera from "@/components/Cabecera.vue";
 import Footer from "@/components/Footer.vue";
+import MenuDerecho from "@/components/MenuDerecho.vue";
+
 export default {
   name: "IngresoCO",
   components: {
     Cabecera,
     Footer,
+    MenuDerecho,
   },
   data() {
     return {
-      num_guia: "",
-    };
+      datos: [],
+      guia: {
+        id: "",
+        numero: "",
+        persona_g: "",
+      },
+      /* id: null,
+      persona: {
+        id: "",
+        nombres: "",
+        apellidos: "",
+        celular: "",
+        whatsapp: "",
+        correo: "",
+        direccion: "",
+        ciudad: "",
+        departamento: "",
+      },*/
+    }; 
+  },
+  mounted() {
+    this.traerPersona();
+    /* this.traerConsulta(); */
   },
   methods: {
-    search_guia() {
+    traerPersona() {
       axios
-        .get("http://localhost:8000/api/terceros/", {
+        .get("http://localhost:8000/api/guia/", {
           params: {
-            search: this.num_guia,
+            search: this.numero,
           },
           headers: {
             Authorization: "JWT " + localStorage.getItem("token"),
           },
         })
         .then((Response) => {
-		  /* console.log(Response.data[0].nombre_tercero); */
-		  console.log(Response.data);
+          console.log(Response.data)
+          /* this.guia = response.data; */
+          /* console.log(Response.data[0].nombre_tercero); */
+          console.log(Response.data);
         });
-	},
+    },
+    /* traerConsulta() {
+      this.id = this.guia.persona_g;
+      axios
+        .get("http://localhost:8000/api/persona/", {
+          params: {
+            search: this.id,
+          },
+          headers: {
+            Authorization: "JWT " + localStorage.getItem("token"),
+          },
+        })
+        .then((response) => {
+          console.log(response);
+          (this.persona.nombres = response.data.nombres),
+            (this.persona.apellidos = response.data.apellidos),
+            (this.persona.celular = response.data.celular),
+            (this.persona.whatsapp = response.data.whatsapp),
+            (this.persona.correo = response.data.correo),
+            (this.persona.direccion = response.data.direccion),
+            (this.persona.ciudad = response.data.ciudad),
+            (this.persona.departamento = response.data.departamento);
+        });
+    }, */
   },
 };
 </script>

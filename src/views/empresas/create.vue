@@ -46,15 +46,15 @@
         </div>
       </div>
       <div class="form-group row">
-        <label for="direccion_empresa" class="col-lg-4 control-label"
+        <label for="direccion" class="col-lg-4 control-label"
           >Dirección</label
         >
         <div>
           <input
             class="form-control col-lg-14"
             type="text"
-            v-model="empresa.direccion_empresa"
-            id="direccion_empresa"
+            v-model="empresa.direccion"
+            id="direccion"
           />
         </div>
       </div>
@@ -64,8 +64,8 @@
           <input
             class="form-control col-lg-14"
             type="text"
-            v-model="empresa.ciudad_empresa"
-            id="ciudad_empresa"
+            v-model="empresa.ciudad"
+            id="ciudad"
           />
         </div>
       </div>
@@ -77,8 +77,8 @@
           <input
             class="form-control col-lg-14"
             type="text"
-            v-model="empresa.departamento_empresa"
-            id="departamento_empresa"
+            v-model="empresa.departamento"
+            id="departamento"
           />
         </div>
       </div>
@@ -116,9 +116,9 @@ export default {
         nombre: "",
         razon_social: "",
         nit: "",
-        direccion_empresa: "",
-        ciudad_empresa: "",
-        departamento_empresa: "",
+        direccion: "",
+        ciudad: "",
+        departamento: "",
         logo: "",
       },
     };
@@ -141,9 +141,9 @@ export default {
       data.append("nombre", this.empresa.nombre);
       data.append("razon_social", this.empresa.razon_social);
       data.append("nit", this.empresa.nit);
-      data.append("direccion_empresa", this.empresa.direccion_empresa);
-      data.append("ciudad_empresa", this.empresa.ciudad_empresa);
-      data.append("departamento_empresa", this.empresa.departamento_empresa);
+      data.append("direccion", this.empresa.direccion);
+      data.append("ciudad", this.empresa.ciudad);
+      data.append("departamento", this.empresa.departamento);
       data.append("logo", this.empresa.logo);
 
       axios

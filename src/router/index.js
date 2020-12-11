@@ -21,7 +21,7 @@ const routes = [
   {
     path: '/devoluciones',
     name: 'Devoluciones',
-    component: () => import('../views/Devoluciones.vue'),
+    component: () => import('../views/returns/upload.vue'),
     meta: {
       auth: true
     }
@@ -29,7 +29,7 @@ const routes = [
   {
     path: '/consulta',
     name: 'Consulta',
-    component: () => import('../views/Consulta.vue'),
+    component: () => import('../views/search.vue'),
     meta: {
       auth: true
     }

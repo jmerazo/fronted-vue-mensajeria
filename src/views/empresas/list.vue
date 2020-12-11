@@ -24,9 +24,9 @@
         <td>{{ empresa.nombre }}</td>
         <td>{{ empresa.razon_social }}</td>
         <td>{{ empresa.nit }}</td>
-        <td>{{ empresa.direccion_empresa }}</td>
-        <td>{{ empresa.ciudad_empresa }}</td>
-        <td>{{ empresa.departamento_empresa }}</td>
+        <td>{{ empresa.direccion }}</td>
+        <td>{{ empresa.ciudad}}</td>
+        <td>{{ empresa.departamento }}</td>
         <div>
           <a :href="`/empresa/${empresa.id}/update`" class="btn btn-success">
              ✏️

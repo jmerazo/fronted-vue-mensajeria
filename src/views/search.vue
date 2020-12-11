@@ -33,20 +33,24 @@
 					<section class="conte_consul_5">
 							<form action="" class="form group row" > 	
 							<label class="col-lg-3 control-label label_ingre" >Nombres  </label>
-								<input class="form-control col-lg-8 info" type="text" id="" name="y" value="" readonly><br>
+								<input class="form-control col-lg-8 info" type="text" id="nombres" name="nombres" value="nombres" v-model="persona.nombres" readonly><br>
 							<label class="col-lg-3 control-label label_ingre" >Apellidos</label>
-								<input class="form-control col-lg-8 info" type="text" id="" name="" value="" readonly><br>
+								<input class="form-control col-lg-8 info" type="text" id="apellidos" name="apellidos" value="apellidos" v-model="persona.apellidos" readonly><br>
 							<label class="col-lg-3 control-label label_ingre" >Celular </label>
-								<input class="form-control col-lg-8 info" type="number" id="" name="" value="" readonly><br>
+								<input class="form-control col-lg-8 info" type="number" id="celular" name="celular" value="celular" v-model="persona.celular" readonly><br>
 								<input  class="btn btn-secondary " style="margin-left:3rem; width:88%;"  type="button" value="Visualizar prueba de entrega" name="btvpe">
 							</form>
 					</section>
 					<section class="conte_consul_6">
 						<form action="" class="form group row">
-							<label class="col-lg-3 control-label label_ingre">Dirección</label><input class="form-control col-lg-8 info" type="text" id="" name="" value="" readonly><br>
-							<label class="col-lg-3 control-label label_ingre">Recepción</label><input class="form-control col-lg-8 info" id="" name="" value="" readonly><br>
-							<label class="col-lg-3 control-label label_ingre">Recepción</label><input class="form-control col-lg-8 info" id="" name="" value="" readonly><br>
-							<label class="col-lg-3 control-label label_ingre">Recepción</label><input class="form-control col-lg-8 info" id="" name="" value="" readonly>
+							<label class="col-lg-3 control-label label_ingre">Correo</label>
+							<input class="form-control col-lg-8 info" id="correo" name="correo" value="correo" v-model="persona.correo" readonly>
+							<label class="col-lg-3 control-label label_ingre">Dirección</label>
+							<input class="form-control col-lg-8 info" type="text" id="direccion" name="direccion" value="direccion" v-model="persona.direccion" readonly><br>
+							<label class="col-lg-3 control-label label_ingre">Ciudad</label>
+							<input class="form-control col-lg-8 info" id="ciudad" name="ciudad" value="ciudad" v-model="persona.ciudad" readonly><br>
+							<label class="col-lg-3 control-label label_ingre">Departamento</label>
+							<input class="form-control col-lg-8 info" id="departamento" name="departamento" value="departamento" v-model="persona.departamento" readonly><br>							
 						</form>
 					</section>
 				</section>
@@ -98,13 +102,40 @@
 		</section>
 </template>
 <script>
-import Cabecera from '@/components/Cabecera.vue'
-import Footer from '@/components/Footer.vue'
+import axios from "axios";
+import Cabecera from '@/components/Cabecera.vue';
+import Footer from '@/components/Footer.vue';
+
 export default {
+	name: 'search',
     components: {
     Cabecera,
-    Footer,
-  
+	Footer,
+	data(){
+		return {
+			persona: [],
+		}
+	},
+	mounted() {
+
+	},
+	methods: {
+		traerPersona() {
+		   axios
+        	.get("http://localhost:8000/api/persona/", {
+          		params: {
+            		search: this.numero,
+          		},
+          		headers: {
+            		Authorization: "JWT " + localStorage.getItem("token"),
+          		},
+        	})
+       		.then((Response) => {
+				  console.log(Response.data)
+				  this.devolucion = Response.data;
+        	});
+	  }
+	}  
   }
 }
 </script>

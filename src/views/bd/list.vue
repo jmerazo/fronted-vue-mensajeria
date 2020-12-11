@@ -16,23 +16,29 @@
         <td>Id</td>
         <td>Guia</td>
         <td>Nombres</td>
-        <td>Tipo servicio</td>
+        <td>Apellidos</td>
+        <td>Celular</td>
+        <td>WhatsApp</td>
+        <td>Correo</td>
+        <td>Dirección</td>
         <td>Ciudad</td>
-        <td>Fecha estado</td>
-        <td>Fecha ingreso</td>
-        <td>Empresa</td>
+        <td>Departamento</td>
+        <td>Historial</td>
       </tr>
     </thead>
     <tbody>
-      <tr v-for="tercero in terceros" :key="tercero.id">
-        <td>{{ tercero.id }}</td>
-        <td>{{ tercero.guia_numero }}</td>
-        <td>{{ tercero.nombre_tercero }}</td>
-        <td>{{ tercero.tipo_servicio }}</td>
-        <td>{{ tercero.ciudad_tercero }}</td>
-        <td>{{ tercero.fecha_estado }}</td>
-        <td>{{ tercero.fecha_ingreso }}</td>
-        <td>{{ tercero.empresa_id }}</td>
+      <tr v-for="person in persona" :key="person.id">
+        <td>{{ person.id }}</td>
+        <td>{{ person.guias }}</td>
+        <td>{{ person.nombres }}</td>
+        <td>{{ person.apellidos }}</td>
+        <td>{{ person.celular }}</td>
+        <td>{{ person.whatsapp }}</td>
+        <td>{{ person.correo }}</td>
+        <td>{{ person.direccion }}</td>
+        <td>{{ person.ciudad }}</td>
+        <td>{{ person.departamento }}</td>
+        <td>{{ person.historial }}</td>
        <!--  <div>
           <a :href="`/empresa/${empresa.id}/update`" class="btn btn-success">
              ✏️
@@ -100,25 +106,25 @@
 import axios from "axios";
 
 export default {
-  name: "Terceros",
+  name: "Persona",
   data() {
     return {
-      terceros: [],
+      persona: [],
     };
   },
   mounted() {
-    this.traerTerceros();    
+    this.traerPersona();    
   },
   methods: {
-    traerTerceros(){
-      axios.get("http://localhost:8000/api/terceros", {
+    traerPersona(){
+      axios.get("http://localhost:8000/api/persona", {
         headers: {
           "Authorization": "JWT " + localStorage.getItem("token")
         },
     })
     .then(response => {
+        this.persona = response.data
         console.log(response.data);
-        this.terceros = response.data
     })
     /* .catch(err =>{
               this.error = true;
